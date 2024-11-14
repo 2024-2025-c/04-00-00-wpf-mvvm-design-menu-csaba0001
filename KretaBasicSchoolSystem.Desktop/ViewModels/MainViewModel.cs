@@ -5,6 +5,7 @@ using KretaBasicSchoolSystem.Desktop.ViewModels.Base;
 using KretaBasicSchoolSystem.Desktop.ViewModels.ControlPanel;
 using KretaBasicSchoolSystem.Desktop.ViewModels.SchoolCitizens;
 using KretaBasicSchoolSystem.Desktop.ViewModels.SchoolClasses;
+using KretaBasicSchoolSystem.Desktop.ViewModels.SchoolSubjects;
 
 namespace KretaBasicSchoolSystem.Desktop.ViewModels
 {
@@ -13,22 +14,27 @@ namespace KretaBasicSchoolSystem.Desktop.ViewModels
         private ControlPanelViewModel _controlPanelViewModel;
         private SchoolCitizensViewModel _schoolCitizensViewModel;
         private SchoolClassesViewModel _SchoolClassesViewModel;
+        private SchoolSubjectsViewModel _SchoolSubjectsViewModel;
 
         public MainViewModel()
         {
             _controlPanelViewModel = new ControlPanelViewModel();
             _schoolCitizensViewModel = new SchoolCitizensViewModel();
+            _SchoolClassesViewModel = new SchoolClassesViewModel();
+            _SchoolSubjectsViewModel = new SchoolSubjectsViewModel();
         }
 
         public MainViewModel(
             ControlPanelViewModel controlPanelViewModel,
             SchoolCitizensViewModel schoolCitizensViewModel,
-            SchoolClassesViewModel schoolClassesViewModel
+            SchoolClassesViewModel schoolClassesViewModel,
+            SchoolSubjectsViewModel schoolSubjectsViewModel
             )
         {
             _controlPanelViewModel = controlPanelViewModel;
             _schoolCitizensViewModel = schoolCitizensViewModel;
             _SchoolClassesViewModel = schoolClassesViewModel;
+            _SchoolSubjectsViewModel = schoolSubjectsViewModel;
 
 
             CurrentChildView = _controlPanelViewModel;
@@ -64,8 +70,16 @@ namespace KretaBasicSchoolSystem.Desktop.ViewModels
         public void ShowSchoolClasses()
         {
             Caption = "Osztályok";
-            Icon = IconChar.Fedora;
+            Icon = IconChar.FaceAngry;
             CurrentChildView = _SchoolClassesViewModel;
+        }
+
+        [RelayCommand]
+        public void ShowSchoolSubjects()
+        {
+            Caption = "Tantárgyak";
+            Icon = IconChar.Bong;
+            CurrentChildView = _SchoolSubjectsViewModel;
         }
     }
 }
