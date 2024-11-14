@@ -6,35 +6,32 @@ namespace KretaBasicSchoolSystem.Desktop.ViewModels.SchoolCitizens
 {
     public partial class SchoolCitizensViewModel : BaseViewModel
     {
+        private StudentViewModel _studentViewModel;
         private TeacherViewModel _teacherViewModel;
         private ParentViewModel _parentViewModel;
-        private StudentViewModel _studentViewModel;
 
         public SchoolCitizensViewModel()
         {
             _currentSchoolCitizensChildView = new StudentViewModel();
+            _currentSchoolCitizensChildView = new TeacherViewModel();
+            _currentSchoolCitizensChildView = new ParentViewModel();
+
+
             _studentViewModel = new StudentViewModel();
-            _parentViewModel = new ParentViewModel();
             _teacherViewModel = new TeacherViewModel();
+            _parentViewModel = new ParentViewModel();
         }
 
-        public SchoolCitizensViewModel(StudentViewModel studentViewModel)
+        public SchoolCitizensViewModel(StudentViewModel studentViewModel, TeacherViewModel teacherViewModel, ParentViewModel parentViewModel)
         {
             _studentViewModel = studentViewModel;
-
-            _currentSchoolCitizensChildView= new StudentViewModel();
-        }
-public SchoolCitizensViewModel(TeacherViewModel teacherViewModel)
-        {
             _teacherViewModel = teacherViewModel;
-
-            _currentSchoolCitizensChildView= new TeacherViewModel();
-        }
-public SchoolCitizensViewModel(ParentViewModel parentViewModel)
-        {
             _parentViewModel = parentViewModel;
 
-            _currentSchoolCitizensChildView= new ParentViewModel();
+
+            _currentSchoolCitizensChildView = new StudentViewModel();
+            _currentSchoolCitizensChildView = new TeacherViewModel();
+            _currentSchoolCitizensChildView = new ParentViewModel();
         }
 
         [ObservableProperty]
@@ -47,15 +44,15 @@ public SchoolCitizensViewModel(ParentViewModel parentViewModel)
         }
 
         [RelayCommand]
-        public void ShowParentView()
-        {
-            CurrentSchoolCitizensChildView = _parentViewModel;
-        }
-
-        [RelayCommand]
         public void ShowTeacherView()
         {
             CurrentSchoolCitizensChildView = _teacherViewModel;
+        }
+
+        [RelayCommand]
+        public void ShowParentView()
+        {
+            CurrentSchoolCitizensChildView = _parentViewModel;
         }
     }
 }
