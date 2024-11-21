@@ -75,7 +75,7 @@
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource colorMidleGreen}"
-                                 Command="{Binding ShowGradesCommand}">
+                                 Command="{Binding ShowSchoolGradesCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="TachographDigital" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Osztályzatok" Style="{StaticResource menuButtonText}"/>

@@ -13,7 +13,7 @@
             <RowDefinition Height="35"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <local:GradesMenu Grid.Row="0"></local:GradesMenu>
+        <local:SchoolGradesMenu Grid.Row="0"></local:SchoolGradesMenu>
         <ContentControl Grid.Row="1" Content="{Binding CurrentSchoolGradesChildViewModel }"></ContentControl>
     </Grid>
 </UserControl>

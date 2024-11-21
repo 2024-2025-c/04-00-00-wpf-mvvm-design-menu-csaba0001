@@ -3,6 +3,7 @@ using KretaBasicSchoolSystem.Desktop.ViewModels.ControlPanel;
 using KretaBasicSchoolSystem.Desktop.ViewModels.Login;
 using KretaBasicSchoolSystem.Desktop.ViewModels.SchoolCitizens;
 using KretaBasicSchoolSystem.Desktop.ViewModels.SchoolClasses;
+using KretaBasicSchoolSystem.Desktop.ViewModels.SchoolGrades;
 using KretaBasicSchoolSystem.Desktop.ViewModels.SchoolSubjects;
 using KretaBasicSchoolSystem.Desktop.Views;
 using KretaBasicSchoolSystem.Desktop.Views.ControlPanel;
@@ -10,6 +11,7 @@ using KretaBasicSchoolSystem.Desktop.Views.Login;
 using KretaBasicSchoolSystem.Desktop.Views.SchoolCitizens;
 using KretaBasicSchoolSystem.Desktop.Views.SchoolClasses;
 using KretaBasicSchoolSystem.Desktop.Views.SchoolSubjects;
+using KretaBasicSchoolSystem.Desktop.Views.SchoolGrades;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace KretaDesktop.Extensions
@@ -68,11 +70,37 @@ namespace KretaDesktop.Extensions
             {
                 DataContext = s.GetRequiredService<SchoolClassesViewModel>()
             });
-            //Osztalyzatok
+            //tantárgyak? maybe idfk
             services.AddSingleton<SchoolSubjectsViewModel>();
             services.AddSingleton<SchoolSubjectsView>(s => new SchoolSubjectsView()
             {
                 DataContext = s.GetRequiredService<SchoolSubjectsViewModel>()
+            });
+            //Osztályzatok
+            services.AddSingleton<SchoolGradesViewModel>();
+            services.AddSingleton<GradesView>(s => new GradesView()
+            {
+                DataContext = s.GetRequiredService<SchoolGradesViewModel>()
+            });
+            services.AddSingleton<CurrentLessonViewModel>();
+            services.AddSingleton<CurrentLesson>(s => new CurrentLesson()
+            {
+                DataContext = s.GetRequiredService<CurrentLessonViewModel>()
+            });
+            services.AddSingleton<TClassesViewModel>();
+            services.AddSingleton<TClassesView>(s => new TClassesView()
+            {
+                DataContext = s.GetRequiredService<TClassesViewModel>()
+            });
+            services.AddSingleton<HYearViewModel>();
+            services.AddSingleton<HYearView>(s => new HYearView()
+            {
+                DataContext = s.GetRequiredService<HYearViewModel>()
+            });
+            services.AddSingleton<EYearViewModel>();
+            services.AddSingleton<EYearView>(s => new EYearView()
+            {
+                DataContext = s.GetRequiredService<EYearViewModel>()
             });
 
         }
