@@ -90,7 +90,7 @@ namespace KretaBasicSchoolSystem.Desktop.ViewModels
         [RelayCommand]
         public void ShowSchoolGrades()
         {
-            Caption = "Tantárgyak";
+            Caption = "Osztályzatok";
             Icon = IconChar.Bong;
             CurrentChildView = _SchoolGradesViewModel;
         }
