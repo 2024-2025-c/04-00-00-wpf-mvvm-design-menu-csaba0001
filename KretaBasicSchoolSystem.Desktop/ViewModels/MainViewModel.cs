@@ -3,43 +3,27 @@ using CommunityToolkit.Mvvm.Input;
 using FontAwesome.Sharp;
 using KretaBasicSchoolSystem.Desktop.ViewModels.Base;
 using KretaBasicSchoolSystem.Desktop.ViewModels.ControlPanel;
-using KretaBasicSchoolSystem.Desktop.ViewModels.SchoolCitizens;
-using KretaBasicSchoolSystem.Desktop.ViewModels.SchoolClasses;
-using KretaBasicSchoolSystem.Desktop.ViewModels.SchoolGrades;
-using KretaBasicSchoolSystem.Desktop.ViewModels.SchoolSubjects;
 
 namespace KretaBasicSchoolSystem.Desktop.ViewModels
 {
     public partial class MainViewModel : BaseViewModel
     {
         private ControlPanelViewModel _controlPanelViewModel;
-        private SchoolCitizensViewModel _schoolCitizensViewModel;
-        private SchoolClassesViewModel _SchoolClassesViewModel;
-        private SchoolSubjectsViewModel _SchoolSubjectsViewModel;
-        private SchoolGradesViewModel _SchoolGradesViewModel;
+
 
         public MainViewModel()
         {
             _controlPanelViewModel = new ControlPanelViewModel();
-            _schoolCitizensViewModel = new SchoolCitizensViewModel();
-            _SchoolClassesViewModel = new SchoolClassesViewModel();
-            _SchoolSubjectsViewModel = new SchoolSubjectsViewModel();
-            _SchoolGradesViewModel = new SchoolGradesViewModel();
+
         }
 
         public MainViewModel(
-            ControlPanelViewModel controlPanelViewModel,
-            SchoolCitizensViewModel schoolCitizensViewModel,
-            SchoolClassesViewModel schoolClassesViewModel,
-            SchoolSubjectsViewModel schoolSubjectsViewModel,
-            SchoolGradesViewModel schoolGradesViewModel
+            ControlPanelViewModel controlPanelViewModel
+
             )
         {
             _controlPanelViewModel = controlPanelViewModel;
-            _schoolCitizensViewModel = schoolCitizensViewModel;
-            _SchoolClassesViewModel = schoolClassesViewModel;
-            _SchoolSubjectsViewModel = schoolSubjectsViewModel;
-            _SchoolGradesViewModel = schoolGradesViewModel;
+
 
 
             CurrentChildView = _controlPanelViewModel;
@@ -62,38 +46,7 @@ namespace KretaBasicSchoolSystem.Desktop.ViewModels
             Icon=IconChar.SolarPanel;
             CurrentChildView = _controlPanelViewModel;
         }
-
-        [RelayCommand]
-        public void ShowSchoolCitizens()
-        {
-            Caption = "Iskolapolgárok";
-            Icon = IconChar.UserGroup;
-            CurrentChildView = _schoolCitizensViewModel;
-        }
-
-        [RelayCommand]
-        public void ShowSchoolClasses()
-        {
-            Caption = "Osztályok";
-            Icon = IconChar.FaceAngry;
-            CurrentChildView = _SchoolClassesViewModel;
-        }
-
-        [RelayCommand]
-        public void ShowSchoolSubjects()
-        {
-            Caption = "Tantárgyak";
-            Icon = IconChar.Bong;
-            CurrentChildView = _SchoolSubjectsViewModel;
-        }
         
-        [RelayCommand]
-        public void ShowSchoolGrades()
-        {
-            Caption = "Osztályzatok";
-            Icon = IconChar.Bong;
-            CurrentChildView = _SchoolGradesViewModel;
-        }
         
     }
 }

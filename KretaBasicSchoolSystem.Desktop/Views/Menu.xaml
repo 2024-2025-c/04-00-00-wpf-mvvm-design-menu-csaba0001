@@ -43,42 +43,7 @@
                         >
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="SolarPanel" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Vezérőpul" Style="{StaticResource menuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-                    <RadioButton
-                        Style="{StaticResource menuButton}"
-                        Tag="{StaticResource colorMidleGreen}"
-                        Command="{Binding ShowSchoolCitizensCommand}"                    
-                     >
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="UserGroup" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Iskolapolgárok" Style="{StaticResource menuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-                    <RadioButton Style="{StaticResource menuButton}"
-                             Tag="{StaticResource colorMidleGreen}"
-                             Command="{Binding ShowSchoolClassesCommand}"
-                             >
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="ChalkboardUser" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Osztályok" Style="{StaticResource menuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-                    <RadioButton Style="{StaticResource menuButton}"
-                             Tag="{StaticResource colorMidleGreen}"
-                             Command="{Binding ShowSchoolSubjectsCommand}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="GraduationCap" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Tantárgyak" Style="{StaticResource menuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-                    <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource colorMidleGreen}"
-                                 Command="{Binding ShowSchoolGradesCommand}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="TachographDigital" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Osztályzatok" Style="{StaticResource menuButtonText}"/>
+                            <TextBlock Text="Vezérőpult" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
                 </StackPanel>
